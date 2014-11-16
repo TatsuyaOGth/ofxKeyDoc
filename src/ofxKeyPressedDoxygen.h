@@ -258,9 +258,10 @@ public:
     static void saveDoc(const string & filePath = "keyassign.txt")
     {
         string & res = getThis()->mResult;
-        ofstream out( filePath.c_str());
+        ofstream out( ofToDataPath(filePath).c_str() );
         out << res;
         out.close();
+        ofLogNotice("ofxKeyPressedDoxygen") << "save key assign text: " << filePath;
     }
     
     static string & getDoc() { return getThis()->mResult; }
