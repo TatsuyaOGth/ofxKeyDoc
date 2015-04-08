@@ -1,5 +1,5 @@
 #include "ofApp.h"
-#include "ofxKeyPressedDoxygen.h"
+#include "ofxKeyDoc.h"
 
 float x;
 float y;
@@ -8,10 +8,10 @@ ofColor col;
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    ofxKeyPressedDoxygen::read(__FILE__);
-    //ofxKeyPressedDoxygen::read(__FILE__, false);
+    ofxKeyDoc::read(__FILE__);
+    //ofxKeyDoc::read(__FILE__, false);
     
-    ofxKeyPressedDoxygen::saveDoc();
+    ofxKeyDoc::saveDoc();
 
     x = ofGetWidth()/2;
     y = ofGetHeight()/2;
@@ -32,7 +32,7 @@ void ofApp::draw(){
     ofRect(x, y, 20, 20);
     
     ofSetColor(255);
-    ofDrawBitmapString(ofxKeyPressedDoxygen::getDoc(), 20, 20);
+    ofDrawBitmapString(ofxKeyDoc::getDoc(), 20, 20);
 }
 
 //--------------------------------------------------------------

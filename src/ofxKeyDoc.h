@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 
-class ofxKeyPressedDoxygen
+class ofxKeyDoc
 {
     string mFilePath;
     string mResult;
@@ -13,9 +13,9 @@ class ofxKeyPressedDoxygen
     vector<string> ofKeyDefines;
     
     // ===== singleton =====
-    ofxKeyPressedDoxygen(){init();}
-    ofxKeyPressedDoxygen(const ofxKeyPressedDoxygen&){init();}
-    ofxKeyPressedDoxygen &operator=(const ofxKeyPressedDoxygen&){init();}
+    ofxKeyDoc(){init();}
+    ofxKeyDoc(const ofxKeyDoc&){init();}
+    ofxKeyDoc &operator=(const ofxKeyDoc&){init();}
     // =====================
     
     void init()
@@ -74,9 +74,9 @@ class ofxKeyPressedDoxygen
         ofKeyDefines.push_back("OF_KEY_RIGHT_COMMAND");
     }
     
-    static ofxKeyPressedDoxygen * getThis()
+    static ofxKeyDoc * getThis()
     {
-        static ofxKeyPressedDoxygen * instance = new ofxKeyPressedDoxygen();
+        static ofxKeyDoc * instance = new ofxKeyDoc();
         return instance;
     }
     
@@ -246,10 +246,10 @@ public:
     {
         if (filePath.empty())
         {
-            ofLogError("ofxKeyPressedDoxygen") << "err file name";
+            ofLogError("ofxKeyDoc") << "err file name";
             return;
         }
-        ofxKeyPressedDoxygen * o = getThis();
+        ofxKeyDoc * o = getThis();
         o->mFilePath = filePath;
         o->isReadKey = read_key;
         o->execute();
@@ -261,7 +261,7 @@ public:
         ofstream out( ofToDataPath(filePath).c_str() );
         out << res;
         out.close();
-        ofLogNotice("ofxKeyPressedDoxygen") << "save key assign text: " << filePath;
+        ofLogNotice("ofxKeyDoc") << "save key assign text: " << filePath;
     }
     
     static string & getDoc() { return getThis()->mResult; }

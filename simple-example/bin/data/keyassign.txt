@@ -1,0 +1,7 @@
+[ LEFT ] move left
+[ RIGHT ] move right
+[ UP ] move up
+[ DOWN ] move down
+[ 1 ] set red
+[ 2 ] set green
+[ 3, 4 ] set blue
