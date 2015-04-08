@@ -1,4 +1,4 @@
-ofxKeyPressedDoxygen
+ofxKeyDoc
 ====================
 
-key assign document generator for openFrameworks,  
+key-assign document generator for openFrameworks
